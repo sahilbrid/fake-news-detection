@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" />
+</head>
+
+<body onload="check({{data}})">
+    <div class="page" style="gap: 160px;">
+        <!-- <img class="fgj-1-icon" alt="" src="../static/bg.jpg" /> -->
+
+        <header class="main-frame">
+            <div class="child-frame">
+                <div class="vector-frame">
+                    <img class="text-node-icon" loading="eager" alt="" src="../static/logo.jpeg" />
+                </div>
+                <div class="factfinder">FactFinder</div>
+            </div>
+            <div class="home-frame">
+                <a class="home" href="/home" >
+                    Home
+                </a>
+                <a class="factchecker" href="/factchecker" style="color: black;">
+                    FactChecker
+                </a>
+            </div>
+        </header>
+
+
+        <section class="frame-a" style="margin-top: -7rem;">
+          <div class="frame-b-parent">
+            <form action="/factchecker" method="post" style="width: 100%;">
+              <div class="frame-b">
+                <div class="rectangle-parent">
+                  <div class="frame-child"></div>
+                  <div class="fact-checker-text">?</div>
+                </div>
+                <h2 class="factchecker1">FactChecker</h2>
+              </div>
+              <div class="main-title-frame">
+                &nbsp;
+                <div class="title">Enter the URL or News article you want to Check :</div>
+                <input style="font-size: 16px;" name="prompt" class="bounds" type="text" required/>
+              </div>
+              <div class="button-frame1">
+                <button type="submit" class="button">
+                <div class="careers">Analyse</div>
+                  </button>
+                </div>
+            </form>
+          </div>
+          <div class="results" style="display: none; margin-top: -2rem;">
+
+            <h3 class="lorem-ipsum-is" style="font-weight: lighter;">
+              {{data.summary}}
+            </h3>
+            <div class="child-frame-e" style="margin-top: 2rem; font-size: 22px;">
+              <h3 class="title1" >
+                <span>Therefore, the </span>
+                <span class="true">AUTHENTICITY SCORE</span>
+                <span>of the following </span>
+                <span> is {{data.prediction}}%</span>
+              </h3>
+              <div class="rectangle-group">
+                <div class="frame-item"></div>
+                <div class="rectangle-g" style="width: {{data.prediction}}%;"></div>
+              </div>
+              <!-- <div class="hate-speech">
+                <h3 class="title2">
+                  <span style="font-weight: bold;"> Hate Speech Report </span>
+                  <br>
+                  <span>{{data.hate_speech}}</span>
+                </h3>
+              </div> -->
+            </div>
+          </div>
+        </section>
+
+
+<!-- 
+        <div class="frame-parent">
+          <section class="group-frame-wrapper">
+            <div class="group-frame">
+              <div class="group-frame-inner">
+                <div class="frame-container">
+                  <button class="rectangle-parent">
+                    <div class="frame-child"></div>
+                    <div class="text-label">?</div>
+                  </button>
+                  <h2 class="factchecker1">FactChecker</h2>
+                </div>
+              </div>
+              <form  action="/factchecker" method="post">
+                  <div class="asistive-text">Asistive text</div>
+                  <div class="title-frame">
+                    <div class="title">Enter the Fact you want to check :</div>
+                    <input type="text" name="prompt" class="bounds" required/>
+                  </div>
+                  
+                  <div class="button-frame1">
+                      <button type="submit" class="button">
+                      <div class="careers">Analysis</div>
+                    </button>
+                  </div>
+              </form>
+              <div class="title-frame1" style="display: none;">
+                <h2 class="title1">The Fact you Entered is {{data.prompt}}% True</h2>
+                <div class="inner-frame">
+                  <div class="inner-frame-child"></div>
+                  <div class="home1" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div> -->
+    </div>
+    <script>
+       function check(data) {
+          console.log("Yess")
+            if(data.data == 1) {
+              document.querySelector(".results").style.display = "block";
+              document.querySelector(".main-title-frame input").value = data.prompt;
+            }
+          }
+    </script>
+</body>
+</html>
