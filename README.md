@@ -20,3 +20,59 @@ The project uses the [WelFake dataset](https://www.kaggle.com/datasets/saurabhsh
 
 
 # Installation
+To use this project perform the following tasks
+
+Make sure you are using python 3.9.6 or better (https://www.python.org/downloads/release/python-396/)
+
+Clone the repository using
+```
+git clone https://github.com/sahilbrid/fake-news-detection.git
+```
+
+Navigate to the project directory
+```
+cd fake-news-detection
+```
+
+Install the required packages
+```
+pip install -r requirements.txt
+```
+
+Run the Flask application
+```
+python main.py
+```
+
+
+# Usage
+Once the application (main.py) file is running
+
+- Open your browser and go to http://127.0.0.1:5000/
+
+  It will open the landing page
+  
+  ![image](https://github.com/user-attachments/assets/4303b142-0cd0-411f-a890-bb7290380acf)
+  
+  It should look something like this
+
+- Now go to the FactChecker section. Here you can paste the news article or the url of the article that you want to check
+
+  ![image](https://github.com/user-attachments/assets/99396c3c-04d2-4659-b692-9e360a4d192a)
+
+- After uploading the article, click on analyse button
+
+  ![image](https://github.com/user-attachments/assets/83ba745f-d7ce-4e0a-abd3-e2205cd25fd9)
+
+  The summary of the article along with its authenticity score will be displayed.
+
+
+# Technology Used
+- **Frontend**: HTML, CSS
+- **Backend**: Python, Flask
+- **Machine Learning**: Scikit-learn, Tensorflow, Transformers, Pandas, Numpy
+- **Web Scraping**: BeautifulSoup4
+
+
+# Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
